@@ -443,11 +443,11 @@ function initCalculator() {
         const unit = inputUnit.value;
         const estVal = priceDisplay.textContent;
         
-        const message = `Hello Radhe Krishna Traders Nagpur!\n\nI would like to receive a custom wholesale quote with the following details:\n\n*Company/Name:* ${name}\n*Contact No:* ${phone}\n*Product:* ${type}\n*Quality:* ${grade}\n*Required Quantity:* ${qty} ${unit}\n*Estimated Market Value:* ${estVal}\n\nPlease confirm availability, logistics costs, and payment options for shipment.\n\nThank you!`;
+        const message = `Hello Radha Krishna Traders Nagpur!\n\nI would like to receive a custom wholesale quote with the following details:\n\n*Company/Name:* ${name}\n*Contact No:* ${phone}\n*Product:* ${type}\n*Quality:* ${grade}\n*Required Quantity:* ${qty} ${unit}\n*Estimated Market Value:* ${estVal}\n\nPlease confirm availability, logistics costs, and payment options for shipment.\n\nThank you!`;
         
         const encodedMessage = encodeURIComponent(message);
         
-        // Radhe Krishna Traders registered trade WhatsApp number (Onkaar Uikey)
+        // Radha Krishna Traders registered trade WhatsApp number (Onkaar Uikey)
         const whatsappURL = `https://wa.me/919730312339?text=${encodedMessage}`;
         
         // Open WhatsApp in a new window/tab

@@ -1,6 +1,6 @@
-# Radhe Krishna Traders - Digital Marketing & Setup Blueprint
+# Radha Krishna Traders - Digital Marketing & Setup Blueprint
 
-This blueprint outlines how to launch **Radhe Krishna Traders** on Google Maps/Search, set up reviews, and establish a digital marketing strategy across Google, Facebook, Instagram, and WhatsApp.
+This blueprint outlines how to launch **Radha Krishna Traders** on Google Maps/Search, set up reviews, and establish a digital marketing strategy across Google, Facebook, Instagram, and WhatsApp.
 
 ---
 
@@ -10,7 +10,7 @@ Establishing your presence on Google Maps is the single most important step for 
 ### Step 1: Create the Listing
 1. Go to **[google.com/business](https://www.google.com/business/)** and sign in with your business Gmail account (`radhakrishnaaa810@gmail.com`).
 2. Click **Add business > Add single business**.
-3. **Business Name**: `Radhe Krishna Traders`
+3. **Business Name**: `Radha Krishna Traders`
 4. **Business Category**: `Spice Wholesaler` or `Agricultural Service`
 5. **Do you want to add a location customers can visit?**: Select **Yes**.
 6. **Enter Address**: 
@@ -58,7 +58,7 @@ Google Ads allows you to appear at the very top of Google Search when people sea
 Since red chillies are highly visual (especially the sun-drying farms and grinding process), social media ads are excellent for building trust.
 
 ### Setup Instructions:
-1. Create a Facebook Business Page for **Radhe Krishna Traders** and link it to an Instagram business profile.
+1. Create a Facebook Business Page for **Radha Krishna Traders** and link it to an Instagram business profile.
 2. Go to **[adsmanager.facebook.com](https://adsmanager.facebook.com/)**.
 3. Create a campaign with the **"Leads"** or **"Traffic"** objective, sending people to your WhatsApp.
 4. **Ad Creatives**: Use the beautiful photos we generated of:

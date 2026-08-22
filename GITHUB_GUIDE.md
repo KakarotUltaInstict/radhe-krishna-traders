@@ -1,6 +1,6 @@
 # How to Host Your Website on GitHub Pages
 
-This guide outlines the step-by-step process to host your new **Radhe Krishna Traders** website on **GitHub Pages** for free. Since this is a static website (HTML, CSS, JS, and image assets), it can be served directly from a GitHub repository.
+This guide outlines the step-by-step process to host your new **Radha Krishna Traders** website on **GitHub Pages** for free. Since this is a static website (HTML, CSS, JS, and image assets), it can be served directly from a GitHub repository.
 
 ---
 
@@ -37,7 +37,7 @@ This guide outlines the step-by-step process to host your new **Radhe Krishna Tr
 
 ### Step 3: Commit Changes
 1. Scroll down to the bottom section called **Commit changes**.
-2. In the first box (Commit summary), type: `Upload Radhe Krishna Traders website files`
+2. In the first box (Commit summary), type: `Upload Radha Krishna Traders website files`
 3. Ensure **Commit directly to the `main` branch** is selected.
 4. Click the green **Commit changes** button. Your files are now uploaded!
 
@@ -54,14 +54,14 @@ This guide outlines the step-by-step process to host your new **Radhe Krishna Tr
 
 ### Step 2: Commit Your Code
 1. In the left-hand panel of GitHub Desktop, you will see a list of all your files (like `index.html`, `styles.css`, `app.js`, and the `assets/` folder).
-2. In the bottom-left corner, enter a summary message in the **Summary** box, for example: `Initial commit of Radhe Krishna Traders Nagpur website`.
+2. In the bottom-left corner, enter a summary message in the **Summary** box, for example: `Initial commit of Radha Krishna Traders Nagpur website`.
 3. Click the blue **Commit to main** button.
 
 ### Step 3: Publish to GitHub
 1. Click the **Publish repository** button at the top menu bar.
 2. In the popup window:
    - **Name**: `radhe-krishna-traders`
-   - **Description**: `Premium Red Chilli trading website for Radhe Krishna Traders, Nagpur.`
+   - **Description**: `Premium Red Chilli trading website for Radha Krishna Traders, Nagpur.`
    - **Keep this code private**: **Uncheck this box** (GitHub Pages requires the repository to be public to host for free, unless you have a paid GitHub Pro account).
 3. Click **Publish Repository**. Your website is now pushed online to GitHub!
 
@@ -79,7 +79,7 @@ git init
 git add .
 
 # 3. Create initial commit
-git commit -m "Initial commit of Radhe Krishna Traders website"
+git commit -m "Initial commit of Radha Krishna Traders website"
 
 # 4. Rename default branch to main
 git branch -M main
