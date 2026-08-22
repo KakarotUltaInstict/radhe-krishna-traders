@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initInteractiveGrinder();
     initCalculator();
     initScrollAnimations();
+    initFarmerVideo();
 });
 
 /* Navigation & Mobile Menu */
@@ -509,5 +510,30 @@ function initScrollAnimations() {
 
     sections.forEach(section => {
         navObserver.observe(section);
+    });
+}
+
+/* Farmer Video Controls */
+function initFarmerVideo() {
+    const video = document.getElementById('farmer-video');
+    const playPauseBtn = document.getElementById('video-play-btn');
+    const playPauseIcon = playPauseBtn ? playPauseBtn.querySelector('i') : null;
+
+    if (!video || !playPauseBtn || !playPauseIcon) return;
+
+    function togglePlayPause() {
+        if (video.paused) {
+            video.play();
+            playPauseIcon.className = 'fa-solid fa-pause';
+        } else {
+            video.pause();
+            playPauseIcon.className = 'fa-solid fa-play';
+        }
+    }
+
+    video.addEventListener('click', togglePlayPause);
+    playPauseBtn.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevent duplicate trigger from video click listener
+        togglePlayPause();
     });
 }
