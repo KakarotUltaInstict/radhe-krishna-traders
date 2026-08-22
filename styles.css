@@ -182,33 +182,42 @@ p {
 }
 
 /* Header & Nav */
+/* Header & Nav */
 header {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1200px;
     z-index: 1000;
     transition: var(--transition);
-    border-bottom: 1px solid transparent;
-}
-
-header.scrolled {
-    background: var(--glass-bg);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--glass-border);
-    padding: 0.5rem 0;
+    background: rgba(27, 17, 15, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(229, 169, 60, 0.12);
+    border-radius: 50px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 header .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 85px;
+    height: 75px;
+    padding: 0 2rem;
     transition: var(--transition);
 }
 
+header.scrolled {
+    top: 10px;
+    background: rgba(27, 17, 15, 0.85);
+    border-color: rgba(229, 169, 60, 0.2);
+    box-shadow: 0 12px 50px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
 header.scrolled .container {
-    height: 70px;
+    height: 65px;
 }
 
 .logo-wrapper {
@@ -219,69 +228,88 @@ header.scrolled .container {
 }
 
 .logo-img {
-    height: 50px;
-    width: 50px;
+    height: 44px;
+    width: 44px;
     object-fit: cover;
     border-radius: 50%;
-    border: 2px solid var(--secondary);
+    border: 1.5px solid var(--secondary);
     transition: var(--transition);
 }
 
 header.scrolled .logo-img {
-    height: 42px;
-    width: 42px;
+    height: 38px;
+    width: 38px;
 }
 
 .brand-title {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
     color: var(--text-light);
+    font-weight: 700;
     letter-spacing: 0.5px;
     transition: var(--transition);
 }
 
+header.scrolled .brand-title {
+    font-size: 1.25rem;
+}
+
 .brand-subtitle {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     color: var(--secondary);
     letter-spacing: 2px;
     text-transform: uppercase;
     display: block;
+    margin-top: -2px;
 }
 
 /* Nav Menu */
 nav ul {
     display: flex;
     list-style: none;
-    gap: 2.5rem;
+    gap: 1.2rem;
+    align-items: center;
 }
 
 nav a {
     color: var(--text-muted);
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 500;
     letter-spacing: 0.5px;
     transition: var(--transition);
-    position: relative;
-    padding: 0.5rem 0;
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    border: 1px solid transparent;
 }
 
 nav a:hover, nav a.active {
     color: var(--text-light);
+    background: rgba(229, 169, 60, 0.06);
+    border-color: rgba(229, 169, 60, 0.1);
+}
+
+nav a.active {
+    background: rgba(178, 34, 34, 0.08);
+    border-color: rgba(178, 34, 34, 0.2);
+    color: var(--text-light);
 }
 
 nav a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--primary);
-    transition: var(--transition);
+    display: none;
 }
 
-nav a:hover::after, nav a.active::after {
-    width: 100%;
+#link-enquiry {
+    background: linear-gradient(135deg, var(--secondary) 0%, #C68E28 100%);
+    color: var(--bg-dark) !important;
+    border: none;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(229, 169, 60, 0.25);
+}
+
+#link-enquiry:hover {
+    background: linear-gradient(135deg, var(--secondary-hover) 0%, var(--secondary) 100%);
+    box-shadow: 0 6px 20px rgba(229, 169, 60, 0.4);
+    transform: translateY(-1px);
 }
 
 .menu-toggle {
@@ -1433,14 +1461,17 @@ footer {
     
     nav {
         position: absolute;
-        top: 100%;
+        top: calc(100% + 15px);
         left: 0;
         width: 100%;
-        background: var(--bg-card);
-        border-bottom: 1px solid var(--border-color);
+        background: rgba(27, 17, 15, 0.95);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(229, 169, 60, 0.15);
+        border-radius: 24px;
         padding: 2rem;
         display: none;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.5);
     }
     
     nav.open {
@@ -1449,8 +1480,19 @@ footer {
     
     nav ul {
         flex-direction: column;
-        gap: 1.5rem;
-        align-items: center;
+        gap: 1.2rem;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    nav a {
+        display: block;
+        padding: 0.8rem;
+    }
+
+    #link-enquiry {
+        margin-left: 0 !important;
+        margin-top: 0.5rem;
     }
     
     .hero-content h1 {
