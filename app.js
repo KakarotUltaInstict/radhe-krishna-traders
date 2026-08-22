@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initCalculator();
     initScrollAnimations();
     initFarmerVideo();
+    initSupplyMap();
+    initFAQAccordion();
 });
 
 /* Navigation & Mobile Menu */
@@ -535,5 +537,115 @@ function initFarmerVideo() {
     playPauseBtn.addEventListener('click', (e) => {
         e.stopPropagation(); // Prevent duplicate trigger from video click listener
         togglePlayPause();
+    });
+}
+
+/* Interactive Logistics Supply Map */
+function initSupplyMap() {
+    const regions = document.querySelectorAll('.map-region');
+    const title = document.getElementById('map-region-title');
+    const desc = document.getElementById('map-region-desc');
+    const time = document.getElementById('map-region-time');
+    const status = document.getElementById('map-region-status');
+
+    if (!regions.length || !title || !desc || !time || !status) return;
+
+    // Logistics data per region
+    const logisticsData = {
+        central: {
+            title: "Nagpur Central Depot",
+            desc: "Our primary processing and logistics yard at Sidheshwar Nagar. Direct loading onto regional freight networks allows express transport to local tehsils (Takshil) and national wholesale markets.",
+            time: "Same Day Dispatch",
+            status: "Active / Loading"
+        },
+        north: {
+            title: "North India Transit Corridor",
+            desc: "Express shipping routes reaching key trading markets like Delhi, Jaipur, Punjab, and Uttar Pradesh. Bulk cargo containers depart daily from our local hub.",
+            time: "2 - 3 Business Days",
+            status: "Active / Scheduled"
+        },
+        west: {
+            title: "West India Pipeline",
+            desc: "Fast transit corridors directly to Gujarat (Ahmedabad, Surat) and Mumbai wholesale spice terminals. Temperature-monitored bulk containers ensure moisture-free transport.",
+            time: "2 Days Transit",
+            status: "Active / Express"
+        },
+        south: {
+            title: "South India Spice Route",
+            desc: "Serving key wholesale networks in Tamil Nadu (Madurai, Chennai), Kerala, and Karnataka. Scheduled weekly cargo dispatches via Southern freight links.",
+            time: "3 - 4 Business Days",
+            status: "Active / Scheduled"
+        },
+        east: {
+            title: "East India Distribution",
+            desc: "Reaching agricultural and export hubs in West Bengal (Kolkata), Bihar, Odisha, and northeastern corridors via express railway freight connections.",
+            time: "3 - 4 Business Days",
+            status: "Active / Scheduled"
+        }
+    };
+
+    function selectRegion(regionName) {
+        // Deactivate all regions
+        regions.forEach(r => r.classList.remove('active'));
+        
+        // Hide all route lines and dest dots
+        document.querySelectorAll('.route-line').forEach(l => l.classList.remove('active'));
+        document.querySelectorAll('.dest-dot').forEach(d => d.classList.remove('active'));
+
+        // Activate selected region
+        const selectedPath = document.querySelector(`.map-region[data-region="${regionName}"]`);
+        if (selectedPath) {
+            selectedPath.classList.add('active');
+        }
+
+        // Activate route line and dest dot if not central
+        if (regionName !== 'central') {
+            const route = document.getElementById(`route-${regionName}`);
+            const dot = document.getElementById(`dot-${regionName}`);
+            if (route) route.classList.add('active');
+            if (dot) dot.classList.add('active');
+        }
+
+        // Update info panel
+        const data = logisticsData[regionName];
+        if (data) {
+            title.textContent = data.title;
+            desc.textContent = data.desc;
+            time.textContent = data.time;
+            status.textContent = data.status;
+        }
+    }
+
+    regions.forEach(region => {
+        const regionName = region.getAttribute('data-region');
+        region.addEventListener('mouseenter', () => selectRegion(regionName));
+        region.addEventListener('click', () => selectRegion(regionName));
+    });
+}
+
+/* B2B FAQ Accordion */
+function initFAQAccordion() {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            const item = question.parentElement;
+            const answer = question.nextElementSibling;
+
+            // Check if open
+            const isOpen = item.classList.contains('open');
+
+            // Close all items
+            document.querySelectorAll('.faq-item').forEach(i => {
+                i.classList.remove('open');
+                i.querySelector('.faq-answer').style.maxHeight = null;
+            });
+
+            // Toggle item
+            if (!isOpen) {
+                item.classList.add('open');
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+            }
+        });
     });
 }
